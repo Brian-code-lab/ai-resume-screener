@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Resume Screener</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> AI Resume Screener</h1>
+            <p>Automate candidate selection with AI-powered resume analysis</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Resumes Analyzed</h3>
+                    <p id="resumeCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Qualified Matches</h3>
+                    <p id="qualifiedCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Time Saved</h3>
+                    <p id="timeSaved">0 hrs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="job-requirements-panel">
+                <h2>Job Requirements</h2>
+                <div class="input-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" placeholder="e.g., Frontend Developer">
+                </div>
+                <div class="input-group">
+                    <label for="jobDescription">Job Description</label>
+                    <textarea id="jobDescription" placeholder="Enter the full job description here..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="requiredSkills">Required Skills (comma separated)</label>
+                    <input type="text" id="requiredSkills" placeholder="e.g., JavaScript, React, CSS">
+                </div>
+                <div class="input-group">
+                    <label for="experienceLevel">Experience Level</label>
+                    <select id="experienceLevel">
+                        <option value="entry">Entry Level (0-2 years)</option>
+                        <option value="mid" selected>Mid Level (3-5 years)</option>
+                        <option value="senior">Senior Level (6+ years)</option>
+                    </select>
+                </div>
+                <button id="saveRequirements" class="primary-btn">Save Requirements</button>
+            </div>
+
+            <div class="resume-upload-panel">
+                <h2>Upload Resumes</h2>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop resume files here</p>
+                    <p>or</p>
+                    <button id="browseBtn" class="secondary-btn">Browse Files</button>
+                    <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                </div>
+                <div class="resume-list" id="resumeList">
+                    <!-- Resumes will be listed here -->
+                </div>
+                <div class="or-divider">
+                    <span>OR</span>
+                </div>
+                <div class="paste-resume">
+                    <h3>Paste Resume Text</h3>
+                    <textarea id="resumeText" placeholder="Paste the resume content here..."></textarea>
+                    <button id="analyzeText" class="primary-btn">Analyze Text</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <h2>Screening Results</h2>
+            <div class="filter-controls">
+                <label for="sortResults">Sort by:</label>
+                <select id="sortResults">
+                    <option value="score">Match Score (High to Low)</option>
+                    <option value="name">Name (A-Z)</option>
+                    <option value="date">Date Analyzed</option>
+                </select>
+                <div class="search-box">
+                    <input type="text" id="searchResults" placeholder="Search candidates...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="results-list" id="resultsList">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+
+        <div class="candidate-modal" id="candidateModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="candidate-details" id="candidateDetails">
+                    <!-- Candidate details will be shown here -->
+                </div>
+            </div>
+        </div>
+
+        <section class="features-section">
+            <h2>How AI is Transforming Recruitment</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Efficiency</h3>
+                    <p>AI can screen hundreds of resumes in seconds, reducing the time-to-hire by up to 75%.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Bias Reduction</h3>
+                    <p>AI-powered screening focuses on skills and qualifications, helping reduce unconscious bias in hiring.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Better Matches</h3>
+                    <p>Advanced algorithms identify candidates whose experience and skills best match job requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Gain insights into your candidate pool and recruitment trends with detailed analytics.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 AI Resume Screener Demo | Created for demonstration purposes</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
